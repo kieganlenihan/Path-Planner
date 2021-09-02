@@ -1,0 +1,14 @@
+bin/
+CGAL_Qt5_moc_and_resources_autogen/
+CMakeFiles/
+icons/
+lib/
+resources/
+
+ui_ImageInterface.h
+qrc_CGAL.cpp
+qrc_File.cpp
+qrc_Input.cpp
+qrc_Triangulation_2.cpp
+cmake_install.cmake
+CMakeCache.txt
