@@ -9,8 +9,6 @@
 
 // CGAL headers
 #include <CGAL/random_polygon_2.h>              // random polygon
-// #include <CGAL/draw_polygon_2.h>                // polygon visualization
-// #include <CGAL/draw_polygon_with_holes_2.h>     // polygon with holes visualization
 #include <CGAL/minkowski_sum_2.h>               // minkowski sum
 
 // Working directory headers
@@ -60,14 +58,8 @@ Polygon_2 get_random_container() {
 }
 
 int main() {
-    if (__cplusplus == 201703L) std::cout << "C++17\n";
-    else if (__cplusplus == 201402L) std::cout << "C++14\n";
-    else if (__cplusplus == 201103L) std::cout << "C++11\n";
-    else if (__cplusplus == 199711L) std::cout << "C++98\n";
-    else std::cout << "pre-standard C++\n";
     cout << "\n-> Welcome to Path Planner!\n\nType 'generate' for to watch an animation of 2D robot path planning!\n\n";
     string input_str;
-    // cin >> input_str;
     input_str = "generate";
     if (input_str == "generate") {
         CGAL::Random rand;

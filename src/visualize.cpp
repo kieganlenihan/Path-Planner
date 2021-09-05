@@ -266,7 +266,7 @@ void Visualizations::draw_minimal_path(Polygon_2 container, Polygon_2 shape, Poi
     set_output_image(y, x);
     shape_inexact = convert_polygon(shape);
     CGAL::Aff_transformation_2<IK> transform = align_shape(container_inexact, 0, 0, 2 * (IMG_OFFSET + MAX_POLY_RADIUS));
-    CGAL::Polygon_2<IK> transformed_cont, mapped_shape, scaled_shape, circ_inexact, mapped_start_circ, mapped_finish_circ, start_circ, end_circ, OMBB_inexact, mapped_start_OMBB, start_OMBB, sum_inexact, transformed_sum;
+    CGAL::Polygon_2<IK> transformed_cont, mapped_shape, scaled_shape, circ_inexact, mapped_start_circ, mapped_finish_circ, start_circ, end_circ, sum_inexact, transformed_sum;
     CGAL::Aff_transformation_2<IK> map_start(1, 0, to_inexact(start.x()), 0, 1, to_inexact(start.y()), 1);
     CGAL::Aff_transformation_2<IK> map_finish(1, 0, to_inexact(finish.x()), 0, 1, to_inexact(finish.y()), 1);
     // Draw
@@ -280,11 +280,6 @@ void Visualizations::draw_minimal_path(Polygon_2 container, Polygon_2 shape, Poi
     transformed_sum = transform_shape_IK(sum_inexact, transform);
     draw_shape(transformed_sum, COLORS_red);
     // OMBB
-    // OMBB_inexact = convert_polygon(OMBB);
-    // mapped_start_OMBB = transform_shape_IK(OMBB_inexact, map_start);
-    // start_OMBB = transform_shape_IK(mapped_start_OMBB, transform);
-    // draw_shape(start_OMBB, COLORS_black, COLORS_palevioletred);
-    // shape
     mapped_shape = transform_shape_IK(shape_inexact, map_start);
     scaled_shape = transform_shape_IK(mapped_shape, transform);
     draw_shape(scaled_shape, COLORS_black, COLORS_blue);
